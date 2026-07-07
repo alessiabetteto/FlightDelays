@@ -32,18 +32,24 @@ class View(ft.UserControl):
         # ROW 2
         self._ddAeroportoP = ft.Dropdown(label="Aeroporto di partenza")
         self._btnAeroportiConnessi = ft.ElevatedButton(text="Aeroporti connessi", on_click=self._controller.handleConnessi)
+        self._ddAeroportoA = ft.Dropdown(label="Aeroporto di destinazione")
+        self._btnTestConnessione = ft.ElevatedButton(text="Test Connessione", on_click=self._controller.handleTestConnessione)
+
+
         row2 = ft.Row([
-            ft.Container(None, width=250),
             ft.Container(self._ddAeroportoP, width=250),
-            ft.Container(self._btnAeroportiConnessi, width=250)],
+            ft.Container(self._btnAeroportiConnessi, width=250),
+            ft.Container(self._ddAeroportoA, width=250),
+            ft.Container(self._btnTestConnessione, width=250)],
+
             alignment=ft.MainAxisAlignment.CENTER)
 
         #ROW 3
-        self._ddAeroportoA = ft.Dropdown(label="Aeroporto di destinazione")
         self._txtNTratteMax = ft.TextField(label="Num tratte max")
         self._btnCercaItinerario = ft.ElevatedButton(text="Cerca itinerario", on_click=self._controller.handleCerca)
+
+
         row3 = ft.Row([
-            ft.Container(self._ddAeroportoA, width=250),
             ft.Container(self._txtNTratteMax, width=250),
             ft.Container(self._btnCercaItinerario, width=250)],
             alignment=ft.MainAxisAlignment.CENTER)
